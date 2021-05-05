@@ -31,8 +31,6 @@ public class BounceThread {
             addButton(buttonPanel, "Close", event -> System.exit(0));
             add(buttonPanel, BorderLayout.SOUTH);
             pack();
-
-
         }
 
         public void addButton(Container container, String title, ActionListener listener) {
@@ -48,8 +46,7 @@ public class BounceThread {
                 try {
                     for (int i = 1; i <= STEPS; i++) {
                         ball.move(comp.getBounds());
-//                        comp.repaint();
-                        comp.paint(comp.getGraphics());
+                        comp.repaint();
                         Thread.sleep(DELAY);
                     }
                 } catch (InterruptedException interruptedException) {
